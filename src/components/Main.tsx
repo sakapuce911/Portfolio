@@ -13,7 +13,7 @@ function Main() {
       <section className="about-section" id="about">
         {/* PROFILE IMAGE */}
         <div className="image-wrapper">
-          <img src={profilePic} alt="Natiora Idealy" />
+          <img src={profilePic} alt="Natiora Idealy Digital & IT Project Manager" />
         </div>
 
         {/* CONTENT */}
@@ -39,9 +39,12 @@ function Main() {
             </a>
           </div>
 
-          {/* NAME & ROLE */}
-          <h1>Natiora Idealy</h1>
-          <p>Digital & IT Project Manager</p>
+          {/* NAME & ROLE (SEO optimized) */}
+          <p className="name">Natiora Idealy</p>
+          <h1>Digital & IT Project Manager</h1>
+          <p className="tagline">
+           Delivering digital & IT projects • Stakeholder coordination • Reliable execution
+         </p>
 
           {/* ABOUT ME */}
           <div className="about-inline">
