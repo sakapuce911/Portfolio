@@ -1,0 +1,67 @@
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 10%;
+  text-align: left;
+}
+
+/* New section subtitle */
+.tools-ai-subtitle {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  max-width: 900px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Two columns grid */
+.tools-ai-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Column title */
+.tools-ai-title {
+  margin-bottom: 15px;
+}
+
+/* Cards */
+.tools-ai-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 12px;
+}
+
+.tools-ai-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.tools-ai-card p {
+  margin: 6px 0 0 0;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Make icons look consistent */
+.tools-ai-card svg {
+  margin-top: 2px;
+}
+
+/* Responsive: stack into 1 column on small screens */
+@media screen and (max-width: 900px) {
+  .projects-container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .tools-ai-grid {
+    grid-template-columns: 1fr;
+  }
+}
