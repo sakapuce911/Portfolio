@@ -27,8 +27,8 @@ import "../assets/styles/Project.scss";
 
 function Project() {
   return (
-    <div className="projects-container" id="projects">
-      <h1>Tools & AI Skills</h1>
+    <div className="projects-container" id="tools">
+      <h2>Tools & AI Skills</h2>
 
       <div className="tools-ai-grid">
         {/* TOOLS USED */}
