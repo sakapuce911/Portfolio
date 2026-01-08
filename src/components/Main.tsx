@@ -45,6 +45,9 @@ function Main() {
           <p className="tagline">
            International Projects • Global Delivery • Business-Oriented Execution
          </p>
+         <p className="availability">
+          Available for international and remote opportunities
+          </p>
 
           {/* ABOUT ME */}
           <div className="about-inline">
