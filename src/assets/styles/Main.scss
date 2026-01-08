@@ -26,9 +26,10 @@
 ========================= */
 
 .about-section .content {
+  position: relative; /* 🔥 IMPORTANT : active réellement le z-index */
   text-align: left;
   z-index: 2;
-  max-width: 720px; /* limite la largeur => lecture plus agréable */
+  max-width: 720px;
 }
 
 .about-section h1 {
@@ -37,10 +38,27 @@
   line-height: 1.05;
 }
 
-.about-section > .content > p {
-  font-size: 1.35em; /* un peu plus petit */
+.about-section .content > p {
+  font-size: 1.35em;
   margin: 10px 0 0;
   opacity: 0.92;
+}
+
+/* =========================
+   HERO NAME + TAGLINE (SEO)
+========================= */
+
+.about-section .name {
+  font-size: 1.35em;
+  margin: 10px 0 6px;
+  opacity: 0.92;
+}
+
+.about-section .tagline {
+  font-size: 1.05em;
+  margin: 10px 0 0;
+  opacity: 0.86;
+  line-height: 1.5;
 }
 
 /* =========================
@@ -105,6 +123,38 @@
   font-size: 1.05rem;
   opacity: 0.9;
   line-height: 1.75; /* +respiration */
+}
+
+/* =========================
+   WHAT I BRING (UL LIST) – FIX DARK MODE
+========================= */
+
+.about-inline ul {
+  margin-top: 14px;
+  padding-left: 1.2rem;
+}
+
+.about-inline li {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 3; /* passe au-dessus des formes */
+}
+
+/* 🎯 Bullet premium */
+.about-inline li::marker {
+  color: #9b5cff;
+}
+
+/* Optionnel mais très efficace : donner un fond léger aux blocs About/What I Bring */
+.dark-mode .about-inline {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 18px 18px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
 }
 
 /* =========================
@@ -179,6 +229,16 @@
     flex-direction: column;
     gap: 22px;
   }
+  
+.about-section .name {
+  font-size: 1.15em;
+  text-align: left;
+}
+
+.about-section .tagline {
+  font-size: 1em;
+  text-align: left;
+}
 
   .about-section .content {
     width: 100%;
@@ -232,4 +292,19 @@
   .cv-card {
     text-align: center; /* mobile -> plus clean */
   }
+
+  .seo-text {
+  margin-top: 24px;
+  opacity: 0.9;
+}
+
+.seo-text h2 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.seo-text p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
 }

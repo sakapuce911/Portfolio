@@ -43,24 +43,58 @@ function Main() {
           <p className="name">Natiora Idealy</p>
           <h1>Digital & IT Project Manager</h1>
           <p className="tagline">
-           Delivering digital & IT projects • Stakeholder coordination • Reliable execution
+           International Projects • Global Delivery • Business-Oriented Execution
          </p>
 
           {/* ABOUT ME */}
           <div className="about-inline">
             <h2>About Me</h2>
             <p>
-              Digital & IT Project Manager with hands-on experience delivering
-              connectivity and digital projects in international environments. I
-              specialize in end-to-end delivery, stakeholder coordination, and
-              ensuring projects are delivered on time, on budget, and with high
-              quality standards.
-            </p>
+              Digital & IT Project Manager with international experience delivering
+              digital and IT projects in complex environments. I work at the
+              intersection of technology, business, and stakeholders to ensure
+              projects are delivered on time, on budget, and aligned with strategic
+              objectives.
+              </p>
+              <p>
+                I have led global delivery initiatives at Orange Business Madagascar
+                and managed data-driven digital projects at Mauritius Digital Service,
+                collaborating with cross-functional and international teams.
+                </p>
           </div>
+          <div className="about-inline">
+            <h2>What I Bring</h2>
+            <ul>
+              <li>End-to-end project delivery in international environments</li>
+              <li>Strong stakeholder coordination across technical & business teams</li>
+              <li>Clear communication, reporting, and execution focus</li>
+              <li>Ability to translate business needs into actionable delivery plans</li>
+            </ul>
+          </div>
+
+          {/* SEO TEXT BLOCK (for Google + Screaming Frog) */}
+          <section className="seo-text">
+            <h2>Digital & IT Project Manager – International Project Delivery</h2>
+
+            <p>
+              I deliver digital and IT projects in international environments,
+              focusing on stakeholder coordination, reliable execution, and
+              business-aligned outcomes. My experience includes global delivery
+              activities and cross-functional collaboration to ensure projects
+              are completed on time, on budget, and with high quality standards.
+            </p>
+
+            <p>
+              This portfolio highlights my background in digital transformation,
+              project management, reporting, and communication. You can also
+              download my CV in English or French and connect with me on LinkedIn.
+            </p>
+          </section>
 
           {/* CV CARD */}
           <div className="cv-card">
             <h3>Download My CV</h3>
+            <p>Available for international and remote opportunities.</p>
             <p>Choose your preferred language</p>
 
             <div className="cv-buttons">
