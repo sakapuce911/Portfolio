@@ -126,7 +126,7 @@
 }
 
 /* =========================
-   WHAT I BRING (UL LIST) – FIX DARK MODE
+   WHAT I BRING (UL LIST) – FIX LIGHT + DARK
 ========================= */
 
 .about-inline ul {
@@ -134,8 +134,9 @@
   padding-left: 1.2rem;
 }
 
+/* ✅ Par défaut = LIGHT MODE (texte sombre lisible) */
 .about-inline li {
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(0, 0, 0, 0.78);
   font-size: 1.05rem;
   line-height: 1.75;
   margin-bottom: 10px;
@@ -143,12 +144,22 @@
   z-index: 3; /* passe au-dessus des formes */
 }
 
-/* 🎯 Bullet premium */
+/* 🎯 Bullet premium (LIGHT) */
 .about-inline li::marker {
+  color: #7b2ff7;
+}
+
+/* ✅ DARK MODE uniquement */
+.dark-mode .about-inline li {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* 🎯 Bullet premium (DARK) */
+.dark-mode .about-inline li::marker {
   color: #9b5cff;
 }
 
-/* Optionnel mais très efficace : donner un fond léger aux blocs About/What I Bring */
+/* Optionnel mais très efficace : donner un fond léger aux blocs About/What I Bring (DARK seulement) */
 .dark-mode .about-inline {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.10);
@@ -229,16 +240,16 @@
     flex-direction: column;
     gap: 22px;
   }
-  
-.about-section .name {
-  font-size: 1.15em;
-  text-align: left;
-}
 
-.about-section .tagline {
-  font-size: 1em;
-  text-align: left;
-}
+  .about-section .name {
+    font-size: 1.15em;
+    text-align: left;
+  }
+
+  .about-section .tagline {
+    font-size: 1em;
+    text-align: left;
+  }
 
   .about-section .content {
     width: 100%;
@@ -294,17 +305,17 @@
   }
 
   .seo-text {
-  margin-top: 24px;
-  opacity: 0.9;
-}
+    margin-top: 24px;
+    opacity: 0.9;
+  }
 
-.seo-text h2 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
+  .seo-text h2 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
 
-.seo-text p {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
+  .seo-text p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
 }
