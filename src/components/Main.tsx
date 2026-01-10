@@ -3,7 +3,7 @@ import "../assets/styles/Main.scss";
 
 import profilePic from "../assets/images/profile.jpg";
 
-// ✅ Material UI Icons (déjà dans ton template)
+// ✅ Material UI Icons
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
@@ -13,7 +13,10 @@ function Main() {
       <section className="about-section" id="about">
         {/* PROFILE IMAGE */}
         <div className="image-wrapper">
-          <img src={profilePic} alt="Natiora Idealy Digital & IT Project Manager" />
+          <img
+            src={profilePic}
+            alt="Natiora Idealy, Digital Transformation & IT Project Manager specialized in international project delivery"
+          />
         </div>
 
         {/* CONTENT */}
@@ -32,7 +35,7 @@ function Main() {
             <a
               href="https://www.linkedin.com/in/natiora/"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer me"
               aria-label="LinkedIn"
             >
               <LinkedInIcon />
@@ -43,28 +46,27 @@ function Main() {
           <p className="name">Natiora Idealy</p>
           <h1>Digital & IT Project Manager</h1>
           <p className="tagline">
-           International Projects • Global Delivery • Business-Oriented Execution
-         </p>
+          International Project Management and Global Delivery</p>
          <p className="availability">
           Available for international and remote opportunities
           </p>
-
           {/* ABOUT ME */}
           <div className="about-inline">
             <h2>About Me</h2>
             <p>
-              Digital & IT Project Manager with international experience delivering
-              digital and IT projects in complex environments. I work at the
-              intersection of technology, business, and stakeholders to ensure
-              projects are delivered on time, on budget, and aligned with strategic
-              objectives.
-              </p>
-              <p>
-                I have led global delivery initiatives at Orange Business Madagascar
-                and managed data-driven digital projects at Mauritius Digital Service,
-                collaborating with cross-functional and international teams.
-                </p>
+              I am a Digital Transformation & IT Project Manager with international experience delivering complex
+              technology and business change initiatives across multi-regional teams. I lead end-to-end delivery—from
+              planning and coordination to execution and reporting—ensuring projects are delivered on time, on budget,
+              and aligned with strategic objectives.
+            </p>
+            <p>
+              In my recent roles, I have managed global delivery programs and digital initiatives within demanding
+              environments, collaborating with cross-functional stakeholders to drive measurable outcomes. I combine
+              structured project governance with clear communication to keep teams aligned, risks controlled, and
+              results consistently achieved.
+            </p>
           </div>
+
           <div className="about-inline">
             <h2>What I Bring</h2>
             <ul>
@@ -75,22 +77,21 @@ function Main() {
             </ul>
           </div>
 
-          {/* SEO TEXT BLOCK (for Google + Screaming Frog) */}
+          {/* SEO TEXT BLOCK (for Google + Crawlers) */}
           <section className="seo-text">
-            <h2>Digital & IT Project Manager – International Project Delivery</h2>
+            <h2>International IT Project Management & Digital Transformation Delivery</h2>
 
             <p>
-              I deliver digital and IT projects in international environments,
-              focusing on stakeholder coordination, reliable execution, and
-              business-aligned outcomes. My experience includes global delivery
-              activities and cross-functional collaboration to ensure projects
-              are completed on time, on budget, and with high quality standards.
+              I deliver digital transformation and IT projects in international environments, focusing on reliable
+              execution, stakeholder alignment, and business impact. My work covers project planning, governance,
+              reporting, and cross-functional coordination to ensure high-quality delivery and strong adoption across
+              teams and regions.
             </p>
 
             <p>
-              This portfolio highlights my background in digital transformation,
-              project management, reporting, and communication. You can also
-              download my CV in English or French and connect with me on LinkedIn.
+              This portfolio showcases my experience in international project delivery, digital transformation, and IT
+              program execution. You can download my CV in English or French and connect with me on LinkedIn to discuss
+              remote or international opportunities.
             </p>
           </section>
 
@@ -105,11 +106,7 @@ function Main() {
                 English
               </a>
 
-              <a
-                href="/french.pdf"
-                download
-                className="cv-button cv-button--secondary"
-              >
+              <a href="/french.pdf" download className="cv-button cv-button--secondary">
                 Français
               </a>
             </div>
@@ -129,7 +126,7 @@ function Main() {
             <a
               href="https://www.linkedin.com/in/natiora/"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer me"
               aria-label="LinkedIn"
             >
               <LinkedInIcon />

@@ -1,0 +1,88 @@
+.education-container {
+  /* ✅ même “rythme” que Project */
+  padding: 32px 10% 48px;
+  text-align: left;
+}
+
+.education-subtitle {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  max-width: 900px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.education-card {
+  border-radius: 16px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.education-title {
+  margin-bottom: 8px;
+}
+
+.education-meta {
+  margin: 0 0 10px 0;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+.education-desc {
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.education-list {
+  margin: 10px 0 0 18px;
+  padding: 0;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.education-card--certs li {
+  margin-bottom: 8px;
+}
+
+/* ✅ Dark mode readability */
+.dark-mode {
+  .education-card,
+  .education-card * {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .education-meta {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .education-list li {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Light mode clean */
+.light-mode {
+  .education-card,
+  .education-card * {
+    color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+@media (max-width: 900px) {
+  .education-container {
+    padding: 24px 5% 36px;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}

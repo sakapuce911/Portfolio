@@ -1,20 +1,30 @@
+/* =========================
+   PROJECTS / TOOLS & AI SKILLS
+========================= */
+
 .projects-container {
   display: flex;
   flex-direction: column;
-  padding: 5% 10%;
+
+  /* ✅ spacing harmonisé avec Education */
+  padding: 32px 10% 24px;
+
   text-align: left;
 }
 
-/* New section subtitle */
+/* Subtitle */
 .tools-ai-subtitle {
-  margin-top: 10px;
-  margin-bottom: 25px;
+  margin-top: 8px;
+  margin-bottom: 20px;
   max-width: 900px;
   opacity: 0.9;
   line-height: 1.5;
 }
 
-/* Two columns grid */
+/* =========================
+   GRID
+========================= */
+
 .tools-ai-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -26,17 +36,49 @@
   margin-bottom: 15px;
 }
 
-/* Cards */
+/* =========================
+   CARDS – LIGHT MODE (DEFAULT)
+========================= */
+
 .tools-ai-card {
   display: flex;
   align-items: flex-start;
   gap: 14px;
   padding: 14px 16px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
   margin-bottom: 12px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+
+  transition: background 0.25s ease, border 0.25s ease,
+    box-shadow 0.25s ease, transform 0.25s ease;
 }
+
+/* Hover – light */
+.tools-ai-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+}
+
+/* =========================
+   DARK MODE OVERRIDE
+========================= */
+
+.dark-mode .tools-ai-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.dark-mode .tools-ai-card:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
 
 .tools-ai-card h3 {
   margin: 0;
@@ -45,23 +87,64 @@
 
 .tools-ai-card p {
   margin: 6px 0 0 0;
-  opacity: 0.9;
   line-height: 1.4;
+  opacity: 0.88;
 }
 
-/* Make icons look consistent */
+.dark-mode .tools-ai-card p {
+  opacity: 0.92;
+}
+
+/* Icons */
 .tools-ai-card svg {
   margin-top: 2px;
+  font-size: 1.3em;
 }
 
-/* Responsive: stack into 1 column on small screens */
+/* ✅ Improve icon contrast in dark mode */
+.dark-mode .tools-ai-card svg {
+  color: rgba(255, 255, 255, 0.92) !important;
+  opacity: 0.95;
+}
+
+/* ✅ Keep light mode readable */
+.light-mode .tools-ai-card svg {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Notes */
+.dark-mode .tools-ai-note {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ✅ Reduce gap after Typical Deliverables */
+.tools-ai-deliverables {
+  margin-bottom: 10px;
+  padding-bottom: 0;
+}
+
+/* ✅ Deliverables: true 2-column grid */
+.tools-ai-deliverables-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media screen and (max-width: 900px) {
   .projects-container {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 24px 5% 18px;
   }
 
   .tools-ai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-ai-deliverables-grid {
     grid-template-columns: 1fr;
   }
 }
