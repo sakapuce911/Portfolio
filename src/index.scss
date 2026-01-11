@@ -58,11 +58,27 @@ button {
   }
 }
 
+/* ✅ IMPORTANT: ne plus forcer en noir ici (sinon dark mode cassé sur mobile) */
 .navigation-bar-responsive {
   span,
   p {
-    color: #0d1116;
     font-family: "Lato", sans-serif;
+  }
+}
+
+/* ✅ Texte Drawer en dark mode */
+.dark-mode .navigation-bar-responsive {
+  span,
+  p {
+    color: #ffffff;
+  }
+}
+
+/* ✅ Texte Drawer en light mode */
+.light-mode .navigation-bar-responsive {
+  span,
+  p {
+    color: #0d1116;
   }
 }
 

@@ -1,12 +1,15 @@
 /* =========================
    Trusted By Section
-   ========================= */
+========================= */
 
 .trustedby-section {
   width: 100%;
   padding: 32px 0 16px; // ↓ réduit surtout le bas
-}
 
+  /* ✅ Tighten spacing between TrustedBy and the next section */
+  padding-bottom: 12px !important; /* réduit le bas */
+  margin-bottom: -18px; /* overlap léger pour supprimer le vide */
+}
 
 .trustedby-card {
   width: min(1100px, 92%);
@@ -24,7 +27,7 @@
 
 /* =========================
    Header
-   ========================= */
+========================= */
 
 .trustedby-header {
   text-align: center;
@@ -48,7 +51,7 @@
 
 /* =========================
    Grid
-   ========================= */
+========================= */
 
 .trustedby-grid {
   display: grid;
@@ -67,8 +70,8 @@
 }
 
 /* =========================
-   Logo Card
-   ========================= */
+   Logo Card (with micro-glow)
+========================= */
 
 .trustedby-logoCard {
   display: flex;
@@ -83,19 +86,43 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.10);
 
-  transition: transform 160ms ease, background 160ms ease,
-    border-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    box-shadow 200ms ease;
+
+  /* ✅ si tu wraps avec <a>, on garde le look "card" */
+  text-decoration: none;
 
   &:hover {
     transform: translateY(-2px);
-    border-color: rgba(162, 89, 255, 0.5);
+    border-color: rgba(162, 89, 255, 0.55);
     background: rgba(162, 89, 255, 0.08);
+
+    /* ✅ micro-glow violet (subtil) */
+    box-shadow:
+      0 0 0 1px rgba(162, 89, 255, 0.22),
+      0 10px 24px rgba(80, 0, 202, 0.22);
+  }
+
+  /* ✅ glow clavier (accessibilité) */
+  &:focus-visible {
+    outline: none;
+    border-color: rgba(162, 89, 255, 0.70);
+    box-shadow:
+      0 0 0 3px rgba(162, 89, 255, 0.28),
+      0 12px 26px rgba(80, 0, 202, 0.22);
+  }
+
+  &:active {
+    transform: translateY(-1px);
   }
 }
 
 /* =========================
    Logos (Monochrome look)
-   ========================= */
+========================= */
 
 .trustedby-logo {
   max-width: 100%;
@@ -116,7 +143,7 @@
    ✅ Fix: avoid "full black squares"
    - We do NOT use brightness(0)
    - We keep logos as grayscale/mono style
-   ========================= */
+========================= */
 
 .light-mode {
   .trustedby-card {
@@ -142,7 +169,7 @@
 /* =========================
    Dark Mode
    ✅ White monochrome (works well)
-   ========================= */
+========================= */
 
 .dark-mode {
   .trustedby-card {
@@ -162,10 +189,4 @@
   .trustedby-logoCard:hover .trustedby-logo {
     filter: grayscale(100%) saturate(0) invert(1) contrast(1.35);
   }
-}
-
-/* ✅ Tighten spacing between TrustedBy and the next section */
-.trustedby-section {
-  padding-bottom: 12px !important;  /* réduit le bas */
-  margin-bottom: -18px;            /* overlap léger pour supprimer le vide */
 }

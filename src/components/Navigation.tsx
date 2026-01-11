@@ -18,7 +18,6 @@ import Toolbar from "@mui/material/Toolbar";
 
 const drawerWidth = 240;
 
-// ✅ History -> Career (id reste "history")
 const navItems: [string, string][] = [
   ["Expertise", "expertise"],
   ["Career", "career"],
@@ -59,23 +58,47 @@ function Navigation({ parentToChild, modeChange }: any) {
 
     const y = el.getBoundingClientRect().top + window.scrollY - navHeight - 12;
     window.scrollTo({ top: y, behavior: "smooth" });
+
+    // ✅ close drawer after click
+    setMobileOpen(false);
   };
+
+  // ✅ Mode-aware drawer styles
+  const drawerBg = mode === "dark" ? "#0d1116" : "#ffffff";
+  const drawerText = mode === "dark" ? "#ffffff" : "#0d1116";
+  const dividerColor =
+    mode === "dark" ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.12)";
 
   const drawer = (
     <Box
       className="navigation-bar-responsive"
-      onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
+      sx={{
+        textAlign: "center",
+        height: "100%",
+        backgroundColor: drawerBg,
+      }}
     >
-      <p className="mobile-menu-top">
+      <p className="mobile-menu-top" style={{ color: drawerText }}>
         <ListIcon /> Menu
       </p>
-      <Divider />
+
+      <Divider sx={{ borderColor: dividerColor }} />
+
       <List>
         {navItems.map((item) => (
           <ListItem key={item[0]} disablePadding>
             <ListItemButton
-              sx={{ textAlign: "center" }}
+              sx={{
+                textAlign: "center",
+                color: drawerText,
+                "& .MuiListItemText-primary": { color: drawerText },
+                "&:hover": {
+                  backgroundColor:
+                    mode === "dark"
+                      ? "rgba(255,255,255,0.06)"
+                      : "rgba(0,0,0,0.04)",
+                },
+              }}
               onClick={() => scrollToSection(item[1])}
             >
               <ListItemText primary={item[0]} />
@@ -89,6 +112,7 @@ function Navigation({ parentToChild, modeChange }: any) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
+
       <AppBar
         component="nav"
         id="navigation"
@@ -133,7 +157,12 @@ function Navigation({ parentToChild, modeChange }: any) {
           ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+              backgroundColor: drawerBg, // ✅ IMPORTANT
+              color: drawerText,         // ✅ IMPORTANT
+            },
           }}
         >
           {drawer}
