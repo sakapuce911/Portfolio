@@ -3,11 +3,9 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import LightModeIcon from "@mui/icons-material/LightMode";
 import List from "@mui/material/List";
 import ListIcon from "@mui/icons-material/List";
 import ListItem from "@mui/material/ListItem";
@@ -15,6 +13,12 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
+import Switch from "@mui/material/Switch";
+
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+
+import "../assets/styles/Navigation.scss";
 
 const drawerWidth = 240;
 
@@ -32,16 +36,13 @@ function Navigation({ parentToChild, modeChange }: any) {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+  const handleDrawerToggle = () => setMobileOpen((p) => !p);
 
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.getElementById("navigation");
       if (navbar) setScrolled(window.scrollY > navbar.clientHeight);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -51,33 +52,20 @@ function Navigation({ parentToChild, modeChange }: any) {
     const nav = document.getElementById("navigation");
     const navHeight = nav?.clientHeight ?? 0;
 
-    if (!el) {
-      console.error(`Element with id "${sectionId}" not found`);
-      return;
-    }
+    if (!el) return;
 
     const y = el.getBoundingClientRect().top + window.scrollY - navHeight - 12;
     window.scrollTo({ top: y, behavior: "smooth" });
-
-    // ✅ close drawer after click
     setMobileOpen(false);
   };
 
-  // ✅ Mode-aware drawer styles
   const drawerBg = mode === "dark" ? "#0d1116" : "#ffffff";
   const drawerText = mode === "dark" ? "#ffffff" : "#0d1116";
   const dividerColor =
     mode === "dark" ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.12)";
 
   const drawer = (
-    <Box
-      className="navigation-bar-responsive"
-      sx={{
-        textAlign: "center",
-        height: "100%",
-        backgroundColor: drawerBg,
-      }}
-    >
+    <Box sx={{ textAlign: "center", height: "100%", backgroundColor: drawerBg }}>
       <p className="mobile-menu-top" style={{ color: drawerText }}>
         <ListIcon /> Menu
       </p>
@@ -129,11 +117,32 @@ function Navigation({ parentToChild, modeChange }: any) {
             <MenuIcon />
           </IconButton>
 
-          {mode === "dark" ? (
-            <LightModeIcon onClick={() => modeChange()} />
-          ) : (
-            <DarkModeIcon onClick={() => modeChange()} />
-          )}
+          {/* ✅ Desktop: switch + label */}
+          <div className="theme-box theme-box--desktop" role="group" aria-label="Theme toggle">
+            <Switch
+              checked={mode === "dark"}
+              onChange={() => modeChange()}
+              inputProps={{ "aria-label": "Toggle theme" }}
+              className="theme-switch__mui"
+            />
+            <span className="theme-box__label">
+              {mode === "dark" ? "Dark" : "Light"}
+            </span>
+          </div>
+
+          {/* ✅ Mobile: only a tiny icon box (no switch) */}
+          <button
+            type="button"
+            className="theme-mini theme-mini--mobile"
+            onClick={() => modeChange()}
+            aria-label="Toggle theme"
+          >
+            {mode === "dark" ? (
+              <DarkModeOutlinedIcon className="theme-mini__icon" />
+            ) : (
+              <LightModeOutlinedIcon className="theme-mini__icon" />
+            )}
+          </button>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -160,8 +169,8 @@ function Navigation({ parentToChild, modeChange }: any) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              backgroundColor: drawerBg, // ✅ IMPORTANT
-              color: drawerText,         // ✅ IMPORTANT
+              backgroundColor: drawerBg,
+              color: drawerText,
             },
           }}
         >
