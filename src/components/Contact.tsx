@@ -9,7 +9,7 @@ function Contact() {
     <section className="contact_wrapper" id="contact">
       <div className="contact-container">
         <div className="contact-card">
-          <h1>Contact</h1>
+          <h2>Contact</h2>
 
           <p className="contact-subtitle">
             Send me a message or book a quick call.

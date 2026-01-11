@@ -40,7 +40,7 @@ const TrustedBy: React.FC = () => {
     <section className="trustedby-section" id="trustedby">
       <div className="trustedby-card">
         <div className="trustedby-header">
-          <h1>They trusted me</h1>
+          <h2>They trusted me</h2>
           <p>
             Brands I supported through digital initiatives, performance marketing,
             and cross-functional project delivery.

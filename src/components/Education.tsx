@@ -56,7 +56,7 @@ function Education() {
       id="education"
       aria-label="Education and certifications"
     >
-      <h1>Education</h1>
+      <h2>Education</h2>
 
       <p className="education-subtitle">
         Academic background aligned with <strong>digital transformation</strong>, structured execution, and
@@ -66,7 +66,7 @@ function Education() {
       <div className="education-grid">
         {education.map((item, idx) => (
           <div className="education-card" key={`edu-${idx}`}>
-            <h2 className="education-title">{item.title}</h2>
+            <h3 className="education-title">{item.title}</h3>
             <p className="education-meta">
               {item.school} • {item.location} • {item.period}
             </p>
@@ -75,7 +75,7 @@ function Education() {
         ))}
 
         <div className="education-card education-card--certs">
-          <h2 className="education-title">Certifications</h2>
+          <h3 className="education-title">Certifications</h3>
           <p className="education-meta">Continuous learning & upskilling</p>
 
           <ul className="education-list">

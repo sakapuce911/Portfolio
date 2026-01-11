@@ -98,7 +98,7 @@ function Project() {
       id="tools"
       aria-label="Tools and skills for international IT project delivery"
     >
-      <h1>Projects</h1>
+      <h2>Projects</h2>
 
       <p className="tools-ai-subtitle">
         A practical toolkit to deliver <strong>digital transformation</strong> and{" "}

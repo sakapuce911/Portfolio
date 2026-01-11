@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Main,
   Timeline,
@@ -11,7 +11,7 @@ import {
 
 import TrustedBy from "./components/TrustedBy";
 import FadeIn from "./components/FadeIn";
-import Education from "./components/Education"; // ✅ AJOUT
+import Education from "./components/Education";
 
 import "./index.scss";
 
@@ -22,27 +22,20 @@ function App() {
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
-
   return (
     <div className={`main-container ${mode === "dark" ? "dark-mode" : "light-mode"}`}>
       <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
 
+      {/* ✅ Main visible immediately (better LCP) */}
+      <Main />
+
+      {/* ✅ Animate only below sections */}
       <FadeIn transitionDuration={700}>
-        <Main />
-
-        {/* ✅ Preuve sociale */}
         <TrustedBy />
-
         <Expertise />
         <Timeline />
         <Project />
-
-        {/* ✅ Education */}
         <Education />
-
         <Contact />
       </FadeIn>
 

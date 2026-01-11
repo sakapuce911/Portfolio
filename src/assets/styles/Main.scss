@@ -337,3 +337,9 @@
     font-style: italic;
   }
 }
+/* ✅ Performance fix: disable background-attachment fixed on mobile */
+@media (max-width: 768px) {
+  .about-section {
+    background-attachment: scroll;
+  }
+}

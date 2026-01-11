@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/styles/Main.scss";
 
-import profilePic from "../assets/images/profile.jpg";
+import profilePic from "../assets/images/profile.webp";
 
 // ✅ Material UI Icons
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -16,6 +16,8 @@ function Main() {
           <img
             src={profilePic}
             alt="Natiora Idealy, Digital Transformation & IT Project Manager specialized in international project delivery"
+            loading="eager"
+            decoding="async"
           />
         </div>
 
@@ -46,7 +48,7 @@ function Main() {
           <p className="name">Natiora Idealy</p>
           <h1>Digital & IT Project Manager</h1>
           <p className="tagline">
-          International Project Management and Global Delivery</p>
+          International Project Management and Digital Transformation</p>
          <p className="availability">
           Available for international and remote opportunities
           </p>

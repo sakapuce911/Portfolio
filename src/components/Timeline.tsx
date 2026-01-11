@@ -24,7 +24,7 @@ const experiences: ExperienceItem[] = [
     date: "Jun 2024 — Present",
     title: "Global Delivery Manager",
     company: "Orange Business",
-    location: "Madagascar • International scope",
+    location: "Madagascar",
     summary:
       "Leading international IT project delivery and digital transformation initiatives, coordinating cross-functional teams and stakeholders to ensure reliable execution and measurable business outcomes.",
     bullets: [
@@ -36,9 +36,9 @@ const experiences: ExperienceItem[] = [
   },
   {
     date: "Jan 2023 — May 2024",
-    title: "Digital Marketing Manager (Project & Performance Delivery)",
+    title: "Digital Marketing Manager",
     company: "Mauritius Digital Service",
-    location: "Mauritius • International collaboration",
+    location: "Mauritius",
     summary:
       "Managed data-driven digital initiatives with a strong focus on planning, execution, performance optimization, and cross-team coordination to deliver business-aligned results.",
     bullets: [
@@ -51,8 +51,8 @@ const experiences: ExperienceItem[] = [
   {
     date: "Mar 2021 — Nov 2022",
     title: "Consultant – Africa Zone",
-    company: "2Interact Inc (USA)",
-    location: "French-speaking Africa • International",
+    company: "2Interact Inc",
+    location: "United States",
     summary:
       "Supported international business expansion by aligning solutions with local regulations, coordinating communication materials, and optimizing go-to-market execution.",
     bullets: [
@@ -67,7 +67,7 @@ const experiences: ExperienceItem[] = [
 function Timeline() {
   return (
     <section className="timeline-container" id="career">
-      <h1>Career</h1>
+      <h2>Career</h2>
 
       <p className="timeline-subtitle">
         International experience delivering <strong>digital transformation</strong>{" "}
