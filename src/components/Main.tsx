@@ -14,7 +14,7 @@ function Main() {
         {/* PROFILE IMAGE */}
         <div className="image-wrapper">
           <img
-            src={profilePic}
+            src="/profile.webp"
             alt="Natiora Idealy, Digital Transformation & IT Project Manager specialized in international project delivery"
             loading="eager"
             decoding="async"
