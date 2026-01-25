@@ -1,8 +1,6 @@
 import React from "react";
 import "../assets/styles/Main.scss";
 
-import profilePic from "../assets/images/profile.webp";
-
 // ✅ Material UI Icons
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -47,11 +45,9 @@ function Main() {
           {/* NAME & ROLE (SEO optimized) */}
           <p className="name">Natiora Idealy</p>
           <h1>Digital & IT Project Manager</h1>
-          <p className="tagline">
-          International Project Management and Digital Transformation</p>
-         <p className="availability">
-          Available for international and remote opportunities
-          </p>
+          <p className="tagline">International Project Management and Digital Transformation</p>
+          <p className="availability">Available for international and remote opportunities</p>
+
           {/* ABOUT ME */}
           <div className="about-inline">
             <h2>About Me</h2>
