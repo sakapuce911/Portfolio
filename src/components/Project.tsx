@@ -10,7 +10,6 @@ import {
   faGears,
   faRobot,
   faMagnifyingGlass,
-  faFileLines,
   faComments,
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
@@ -139,7 +138,7 @@ function Project() {
         </div>
       </div>
 
-      {/* ✅ FIXED Deliverables: one real 2-column grid (no empty column gap) */}
+      {/* DELIVERABLES */}
       <div className="tools-ai-deliverables">
         <h2 className="tools-ai-title">Typical Deliverables</h2>
 
